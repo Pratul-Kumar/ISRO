@@ -91,7 +91,7 @@ Modify `config/default_config.yaml` to adjust:
 
 ## 📝 License
 
-This project is licensed under the MIT License.
+This project is licensed belongs to Pratul Kumar
 
 ## 👥 Contributing
 
