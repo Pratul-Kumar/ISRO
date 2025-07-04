@@ -1,0 +1,60 @@
+animation_fps: 2
+base_spread_rate: 0.1
+batch_size: 8
+cell_size: 30
+compression: lzw
+create_animations: true
+data_paths:
+  dem: C:\Users\Pratul\Desktop\TEAM ALFA\data\raw\dem.tif
+  fire_history:
+  - C:\Users\Pratul\Desktop\TEAM ALFA\data\raw\fire_2020.tif
+  - C:\Users\Pratul\Desktop\TEAM ALFA\data\raw\fire_2021.tif
+  - C:\Users\Pratul\Desktop\TEAM ALFA\data\raw\fire_2022.tif
+  humidity: C:\Users\Pratul\Desktop\TEAM ALFA\data\raw\humidity.tif
+  lulc: C:\Users\Pratul\Desktop\TEAM ALFA\data\raw\landcover.tif
+  rainfall: C:\Users\Pratul\Desktop\TEAM ALFA\data\raw\rainfall.tif
+  temperature: C:\Users\Pratul\Desktop\TEAM ALFA\data\raw\temperature.tif
+  wind_direction: C:\Users\Pratul\Desktop\TEAM ALFA\data\raw\wind_direction.tif
+  wind_speed: C:\Users\Pratul\Desktop\TEAM ALFA\data\raw\wind_speed.tif
+environmental_data_paths:
+  aspect: data/processed/dem_aspect.tif
+  fuel_load: data/processed/lulc_fuel.tif
+  moisture: data/processed/humidity_normalized.tif
+  slope: data/processed/dem_slope.tif
+  wind_direction: data/processed/wind_direction_aligned.tif
+  wind_speed: data/processed/wind_speed_normalized.tif
+epochs: 10
+fuel_effect: 0.8
+hidden_size: 128
+input_shape:
+- 256
+- 256
+- 8
+learning_rate: 0.001
+max_burning_time: 7200
+model_type: lstm
+moisture_effect: 0.6
+n_classes: 2
+n_features: 8
+n_layers: 2
+patch_size:
+- 256
+- 256
+paths:
+  models: models
+  outputs: data/outputs
+  processed_data: data/processed
+  raw_data: data/raw
+random_seed: 42
+risk_threshold: 0.8
+roads_shapefile: data/raw/roads.shp
+save_geotiffs: true
+save_interval_hours: 1.0
+sequence_length: 7
+settlements_shapefile: data/raw/settlements.shp
+simulation_hours: 6.0
+slope_effect: 0.3
+target_crs: EPSG:4326
+target_resolution: 0.0003  # ~30 meters at mid-latitudes in degrees
+time_step: 300
+wind_effect: 0.5
